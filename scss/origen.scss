@@ -5,6 +5,11 @@
 
 /*variable*/
 $celeste: rgb(0, 179, 255);
+$anchura: 100%;
+$altura: 200px;
+
+
+
 
 
 
@@ -104,11 +109,83 @@ h3 { background-color: $celeste; color: rgb(250, 162, 130);
 font-size: 3m;
 }
 
-ul{
-    background-image: url("../img/viajeseguro.png") ;
-    
-   
+.is-flex{
+    display: flex;
 }
+
+.loguitos{
+    height: 70px;
+}
+
+/*Extend*/ 
+.compañias{
+    font-size: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+}
+
+.compamarillo {
+    @extend .compañias;
+    color: yellow;
+}
+
+.comprojo {
+    @extend .compañias;
+    color: red;
+}
+
+.compazul{
+    @extend .compañias;
+    color: blue;
+}
+
+
+/*Mixin*/ 
+@mixin tamaño ($anchura, $altura) {
+    width: $anchura;
+    height: $altura;
+}
+
+ul{
+    @include tamaño (1024px, 200px )
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../img/viajeseguro.png") ;
+       
+}
+/*Each*/ 
+@each $secciones in body, header, main, footer {
+    #{$secciones} {background-color: sandybrown;}
+}
+
+/*Mapas*/ 
+$mapa: (
+    mail: solid 5px red,
+    whatsapp: solid 5px green,
+    instagram: solid 5px purple
+);
+
+/*Mapas con each*/ 
+@each $nombres, $bordecito in $mapa {
+    .boton-#{$nombres}{
+        border: $bordecito;
+    }
+}
+
+section div.mail{
+    border: map-get($mapa, mail );}
+section div.whatsapp{
+    border: map-get($mapa , whatsapp );}
+section div.instagram{  
+    border: map-get($mapa, instagram );
+}
+
+
 .oficina {
     width: 450px;
     height: 30px;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Import*/
 /*desktop*/
 /*tablet*/
@@ -136,8 +137,88 @@ h3 {
   font-size: 3m;
 }
 
+.is-flex {
+  display: flex;
+}
+
+.loguitos {
+  height: 70px;
+}
+
+/*Extend*/
+.compañias, .compazul, .comprojo, .compamarillo {
+  font-size: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: aliceblue;
+}
+
+.compamarillo {
+  color: yellow;
+}
+
+.comprojo {
+  color: red;
+}
+
+.compazul {
+  color: blue;
+}
+
+/*Mixin*/
 ul {
+  width: 1024px;
+  height: 200px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
   background-image: url("../img/viajeseguro.png");
+}
+
+/*Each*/
+body {
+  background-color: sandybrown;
+}
+
+header {
+  background-color: sandybrown;
+}
+
+main {
+  background-color: sandybrown;
+}
+
+footer {
+  background-color: sandybrown;
+}
+
+/*Mapas*/
+/*Mapas con each*/
+.boton-mail {
+  border: solid 5px red;
+}
+
+.boton-whatsapp {
+  border: solid 5px green;
+}
+
+.boton-instagram {
+  border: solid 5px purple;
+}
+
+section div.mail {
+  border: solid 5px red;
+}
+
+section div.whatsapp {
+  border: solid 5px green;
+}
+
+section div.instagram {
+  border: solid 5px purple;
 }
 
 .oficina {
